@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class main{
 	
 	private Mybignumber number;
-main(){
+	public static void main(String[] args) {
 	number = new Mybignumber();
 	//nhập dữ liệu
 	String a;
