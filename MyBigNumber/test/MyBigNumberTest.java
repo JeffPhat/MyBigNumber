@@ -7,34 +7,50 @@ class MyBigNumberTest implements IReceiver{
 
 	@Test
 	void testMyBigNumber() {
-		MyBigNumberTest myclass = new MyBigNumberTest();
-		MyBigNumber mybignumber = new MyBigNumber(myclass);
-		String sum = mybignumber.sum("10", "30");
+		try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("10", "20");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
 	}
 
 	
 	
 	@Test
 	void testMyBigNumber1() {
-		MyBigNumberTest myclass = new MyBigNumberTest();
-		MyBigNumber mybignumber = new MyBigNumber(myclass);
-		String sum = mybignumber.sum("123", "321");
+		try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("123", "321");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
 	}
 	
 	
 	@Test
 	void testMyBigNumber2() {
-		MyBigNumberTest myclass = new MyBigNumberTest();
-		MyBigNumber mybignumber = new MyBigNumber(myclass);
-		String sum = mybignumber.sum("150", "20");
+		try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("100", "50");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
 	}
 	
 	
 	@Test
 	void testMyBigNumber3() {
-		MyBigNumberTest myclass = new MyBigNumberTest();
-		MyBigNumber mybignumber = new MyBigNumber(myclass);
-		String sum = mybignumber.sum("100", "300");
+		try{
+            MyBigNumberTest test = new MyBigNumberTest();
+            MyBigNumber mybignumber = new MyBigNumber(test);
+            String sum = mybignumber.sum("300", "100");
+        }catch(NumberFormatException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
 	}
 
 	@Override
