@@ -37,6 +37,15 @@ Lê Nguyên Hoài Nghĩa
 
 - Exception should include error location
 
+=====================
+
+Nguyễn Lê Thanh Bách
+
+=====================
+
+Give the guideline to download into file "https://github.com/Jef.../MyBigNumber/blob/master/README.TXT" or "https://github.com/Jeff.../MyBigNumber/blob/master/README.md
+
+==>Fixed.
 
 
 **********************************************
