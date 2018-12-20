@@ -1,11 +1,11 @@
 # MyBigNumber
 Assignment
 
-==================
+==================================
 
-    HƯỚNG DẪN:
+             HƯỚNG DẪN:
     
-==================
+==================================
 
 1.Link của phần mềm : https://drive.google.com/drive/folders/14s5X8y3S4ZJHRgRAD8c9ueaY5W8E3nkO
 
@@ -20,13 +20,22 @@ Assignment
 6.Nhấn nút Làm mới để thực hiện một phép toán khác.
 
 
-===================
+================================
 
-      REVIEW
+            REVIEW
       
-===================
+================================
 
+=====================
 
+Lê Nguyên Hoài Nghĩa
+
+=====================
+
+- There is no test code for invalid data.
+- Don't using "abstract" for method in the interface "IReceiver".
+
+- Exception should include error location
 
 
 
