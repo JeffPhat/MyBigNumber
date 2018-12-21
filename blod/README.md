@@ -26,16 +26,6 @@ Assignment
       
 ================================
 
-=====================
-
-Lê Nguyên Hoài Nghĩa
-
-=====================
-
-- There is no test code for invalid data.
-- Don't using "abstract" for method in the interface "IReceiver".
-
-- Exception should include error location
 
 =====================
 
