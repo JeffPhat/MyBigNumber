@@ -11,20 +11,22 @@ public class MyBigNumber {
 Đây là cmt.
 */
 
-	private IReceiver ireceiver;
+    private IReceiver ireceiver;
 
     public MyBigNumber(final IReceiver ireceiver) {
         this.ireceiver = ireceiver;
     }
     
+    /**
+Đây là cmt.
+*/
     
-    
-    public String sum(final String a,final String b) {
+    public String sum(final String a, final String b) {
         int c = a.length();
         int d = b.length();
         String result = "";
-		String step = "";
-		String abc = "";
+        String step = "";
+        String abc = "";
         int sodu = 0;
         int max = 0;
         int flag;
@@ -60,6 +62,7 @@ public class MyBigNumber {
             s2 = num2 - '0';
             
             k = s1 + s2;
+            
             //cộng từng số
             flag = (s1) + (s2) + sodu;
             
@@ -81,10 +84,11 @@ public class MyBigNumber {
             step = step + abc;
         }
         
-        if(sodu > 0) {
-        	result = sodu + result;
+        if (sodu > 0) {
+            result = sodu + result;
         }
         this.ireceiver.send(step);
+        
         return result;
     }
 }
