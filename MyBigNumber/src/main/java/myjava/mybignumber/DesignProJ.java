@@ -5,6 +5,11 @@
  */
 package myjava.mybignumber;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Feng Timo
@@ -125,9 +130,37 @@ public class DesignProJ extends javax.swing.JFrame implements IReceiver {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jTextField2.getText();
+    	String s1 = jTextField1.getText();
+        String s2 = jTextField2.getText();
+        final Pattern pattern = Pattern.compile("\\D"); //Numerical sequences represent numeric characters [0-9]
+	    final Matcher flag1 = pattern.matcher(s1); 
+	    final Matcher flag2 = pattern.matcher(s2); 
+        
+	    //check two number sequences is empty or not
+        // if it is null make it = '0'
+        if ((s1 == null) || (s1.trim().isEmpty())) {
+        	s1 = "0";
+        }
+        if ((s2 == null) || (s2.trim().isEmpty())) {
+        	s2 = "0";
+        }
+	    
+	    //Check whether characters are special characters or characters
+	    if (flag1.find() && !flag2.find()) {
+	    	JOptionPane.showMessageDialog(jTextArea1, "Vui lòng không chứa kí tự trong chuỗi : " + s1);
+	    	jTextField3.setText(null);
+	    }
+	    if (flag2.find() && !flag1.find()) {
+	    	JOptionPane.showMessageDialog(jTextArea1, "Vui lòng không chứa kí tự trong chuỗi : " + s2);
+	    	jTextField3.setText(null);
+	    }
+	    if (flag1.find() && flag2.find()) {
+	    	JOptionPane.showMessageDialog(jTextArea1, "Vui lòng không chứa kí tự trong chuỗi : " + s1 + " và " + s2);
+	    	jTextField3.setText(null);
+	    }
+	    
             MyBigNumber s = new MyBigNumber(this);
-            String result = s.sum(jTextField1.getText(),jTextField2.getText());
+            String result = s.sum(s1, s2);
             
             jTextField3.setText(result);
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -192,5 +225,6 @@ public class DesignProJ extends javax.swing.JFrame implements IReceiver {
     @Override
     public void send(String abc) {
         jTextArea1.setText(abc); //To change body of generated methods, choose Tools | Templates.
+        System.out.println(abc);
     }
 }

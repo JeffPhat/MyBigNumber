@@ -1,5 +1,8 @@
 package myjava.mybignumber;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Tác giả: Trần Hữu Phát.
  * sum là hàm để thực hiện phép cộng 2 chuỗi số
@@ -22,11 +25,16 @@ public class MyBigNumber {
 */
     
     public String sum(final String a, final String b) {
-        int c = a.length();
-        int d = b.length();
+        final Pattern pattern = Pattern.compile("\\D");
+        final Matcher flag1 = pattern.matcher(a);
+        final Matcher flag2 = pattern.matcher(b);
+        String str1 = a;
+        String str2 = b;
         String result = "";
         String step = "";
         String abc = "";
+        final int c = str1.length();
+        final int d = str2.length();
         int sodu = 0;
         int max = 0;
         int flag;
@@ -37,6 +45,44 @@ public class MyBigNumber {
         int k;   // tổng tạm không có số nhớ
         int s1;
         int  s2;
+        int local;
+        
+        //check two number sequences is empty or not
+        // if it is null make it = '0'
+        if ((str1 == null) || (str1.trim().isEmpty())) {
+            str1 = "0";
+        }
+        if ((str2 == null) || (str2.trim().isEmpty())) {
+            str2 = "0";
+        }
+        
+        //Check whether the number is negative
+        if (str1.charAt(0) == '-') {
+            local = 1;
+            this.ireceiver.send("Chưa hỗ trợ số âm : " + str1);
+            throw new NumberFormatException("Tại vị trí " + local 
+                    + " của chuỗi " + str1 + " không phải là số");
+        }
+        if (str2.charAt(0) == '-') {
+            local = 1;
+            this.ireceiver.send("Chưa hỗ trợ số âm : " + str2);
+            throw new NumberFormatException("Tại vị trí " + local 
+                    + " của chuỗi " + str2 + " không phải là số");
+        }
+        
+        //Check whether characters are special characters or characters
+        if (flag1.find()) {
+            local = flag1.start() + 1;
+            this.ireceiver.send("Vui lòng không chứa kí tự trong chuỗi : " + str1);
+            throw new NumberFormatException("Tại vị trí " + local 
+                    + " của chuỗi " + str1 + " không phải là số");
+        }
+        if (flag2.find()) {
+            local = flag2.start() + 1;
+            this.ireceiver.send("Vui lòng không chứa kí tự trong chuỗi : " + str2);
+            throw new NumberFormatException("Tại vị trí " + local 
+                    + " của chuỗi " + str1 + " không phải là số");
+        }
         
         //so sánh độ dài 2 chuổi.
         
