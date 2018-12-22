@@ -26,17 +26,16 @@ Assignment
       
 ================================
 
-=====================
-
-Lê Nguyên Hoài Nghĩa
 
 =====================
 
-- There is no test code for invalid data.
-- Don't using "abstract" for method in the interface "IReceiver".
+Nguyễn Lê Thanh Bách
 
-- Exception should include error location
+=====================
 
+Give the guideline to download into file "https://github.com/Jef.../MyBigNumber/blob/master/README.TXT" or "https://github.com/Jeff.../MyBigNumber/blob/master/README.md
+
+==>Fixed.
 
 
 **********************************************
