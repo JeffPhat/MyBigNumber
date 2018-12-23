@@ -5,12 +5,20 @@ import org.junit.jupiter.api.Test;
 
 class MyBigNumberTest implements IReceiver{
 
+
+        public static int p = 0;
+	public static ArrayList<String> list = new ArrayList<String>();
+	
+	
+	
 	@Test
 	void testMyBigNumber() {
 		try{
+			list.add("10 + 20");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("10", "20");
+			assertEquals("30", sum);
         }catch(NumberFormatException ex){
             System.out.println("Error: " + ex.getMessage());
         }
@@ -20,9 +28,11 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber1() {
 		try{
+			list.add("123 + 321");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("123", "321");
+			assertEquals("444", sum);
         }catch(NumberFormatException ex){
             System.out.println("Error: " + ex.getMessage());
         }
@@ -32,9 +42,11 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber2() {
 		try{
+			list.add("100 + 50");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("100", "50");
+			assertEquals("150", sum);
         }catch(NumberFormatException ex){
             System.out.println("Error: " + ex.getMessage());
         }
@@ -44,9 +56,11 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber3() {
 		try{
+			list.add("300 + 100");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("300", "100");
+			assertEquals("400", sum);
         }catch(NumberFormatException ex){
             System.out.println("Error: " + ex.getMessage());
         }
@@ -55,6 +69,7 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber4() {
 		try{
+			list.add("303dsfas0 + 100");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("303dsfas0", "100");
@@ -66,6 +81,7 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber5() {
 		try{
+			list.add("303dsfas0 + 10đá0");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("303dsfas0", "10đá0");
@@ -77,6 +93,7 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber6() {
 		try{
+			list.add("30%%%3dsfas0 + 10đá0");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("30%%%3dsfas0", "10đá0");
@@ -88,6 +105,7 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber7() {
 		try{
+			list.add("30%%%3dsfas0 + 10đáda&&0");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("30%%%3dsfas0", "10đáda&&0");
@@ -99,6 +117,7 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber8() {
 		try{
+			list.add("-30%%%3dsfas0 + 10đáda&&0");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("-30%%%3dsfas0", "10đáda&&0");
@@ -110,9 +129,10 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber9() {
 		try{
+			list.add("-30456540 + -30456540");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
-            String sum = mybignumber.sum("-30456540", "-1045645");
+            String sum = mybignumber.sum("-30456540", "-30456540");
         }catch(NumberFormatException ex){
             System.out.println("Error: " + ex.getMessage());
         }
@@ -121,6 +141,7 @@ class MyBigNumberTest implements IReceiver{
 	@Test
 	void testMyBigNumber10() {
 		try{
+			list.add("-30456540 + 1045645");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("-30456540", "1045645");
@@ -132,7 +153,8 @@ class MyBigNumberTest implements IReceiver{
 	@Override
 	public void send(String abc) {
 		// TODO Auto-generated method stub
-		System.out.println("case: " + abc);
+		System.out.println(list.get(p) + abc);
+		p++;
 	}
 
 }
