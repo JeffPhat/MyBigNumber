@@ -13,57 +13,42 @@ class MyBigNumberTest implements IReceiver{
 	
 	@Test
 	void testMyBigNumber() {
-		try{
+	
 			list.add("10 + 20");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("10", "20");
 			assertEquals("30", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage());
-        }
 	}
 
 	
 	@Test
 	void testMyBigNumber1() {
-		try{
 			list.add("123 + 321");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("123", "321");
 			assertEquals("444", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage());
-        }
 	}
 	
 	
 	@Test
 	void testMyBigNumber2() {
-		try{
 			list.add("100 + 50");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("100", "50");
 			assertEquals("150", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage());
-        }
 	}
 	
 	
 	@Test
 	void testMyBigNumber3() {
-		try{
 			list.add("300 + 100");
             MyBigNumberTest test = new MyBigNumberTest();
             MyBigNumber mybignumber = new MyBigNumber(test);
             String sum = mybignumber.sum("300", "100");
 			assertEquals("400", sum);
-        }catch(NumberFormatException ex){
-            System.out.println("Error: " + ex.getMessage());
-        }
 	}
 	
 	@Test
